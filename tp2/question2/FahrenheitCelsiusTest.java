@@ -68,5 +68,18 @@ public class FahrenheitCelsiusTest extends junit.framework.TestCase
      * Par convention, leurs noms devraient débuter par "test".
      * Vous pouvez ébaucher le corps grâce au menu contextuel "Enregistrer une méthode de test".
      */
+    public void test_fahrenheitEnCelsius_Question2() {
+        assertEquals("   123 °F -> 50.5 °C ?", 50.5, question1.FahrenheitCelsius.fahrenheitEnCelsius(123), 0.1);
+        assertEquals("   456 °F -> 235.5 °C ?", 235.5, question1.FahrenheitCelsius.fahrenheitEnCelsius(456), 0.1);
+        
+        // For exception
+        try {
+          Integer.parseInt("LAMA");
+          fail("Expected an Exception to be thrown");
+        } catch (NumberFormatException e) {
+          assertEquals("For input string: \"" + "LAMA" + "\"", e.getMessage());
+        }
+    }
+    
 
 }
